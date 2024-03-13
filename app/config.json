@@ -1,0 +1,37 @@
+{
+  "serviceName": "just thinking",
+  "menuButtonText": "Menu",
+  "classes": "custom-class",
+  "attributes": {
+    "id": "govuk-header",
+    "aria-label": "Government Header"
+  },
+  "containerClasses": "custom-container-class",
+  "homepageUrl": "/",
+  "productName": "My Government Service",
+  "serviceUrl": "/services",
+  "navigationLabel": "Navigation",
+  "menuButtonLabel": "Toggle Menu",
+  "navigation": [
+    {
+      "text": "Home",
+      "href": "/",
+      "active": true
+    },
+    {
+      "text": "About",
+      "href": "/about",
+      "active": true
+    },
+    {
+      "text": "Services",
+      "href": "/services",
+      "active": true
+    },
+    {
+      "text": "Contact",
+      "href": "/contact",
+      "active": true
+    }
+  ]
+}

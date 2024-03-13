@@ -1,0 +1,77 @@
+{% extends "layouts/default.html" %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{% block pageTitle %}
+  Create a new incident - name
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="org-contact" method="post">
+     
+        <div class="govuk-form-group">
+          <label class="govuk-label--l" for="location">
+            Choose location
+          </label>
+          <div id="location-hint" class="govuk-hint">
+            This can be different to where you went before
+          </div>
+          <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
+            <option value="choose" selected>Choose location</option>
+            <option value="eastmidlands">Air Pollution</option>
+            <option value="eastofengland">Birmingham/Manchester</option>
+            <option value="london">Chemicals and Poisons</option>
+            <option value="northeast">Chilton/Bristol</option>
+            <option value="northwest">Climate Change</option>
+            <option value="southeast">CRCE Other</option>
+            <option value="southwest">Epidemiology</option>
+            <option value="westmidlands">Extreme Events</option>
+            <option value="yorkshire">General Toxicology</option>
+            <option value="southeast">London</option>
+            <option value="southwest">Noise</option>
+            <option value="westmidlands">Notthingham Newcastle</option>
+            <option value="yorkshire">PHE Other</option>
+            <option value="southeast">Radiation</option>
+            <option value="southwest">Wales</option>
+          </select>
+        </div>
+
+        
+      
+
+        {{ govukButton({
+          text: "Save and Continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+        
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}

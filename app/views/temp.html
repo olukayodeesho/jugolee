@@ -1,0 +1,57 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+{%- from "moj/components/header/macro.njk" import mojHeader -%}
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+{% block header %}
+
+
+{{ mojHeader({
+  organisationLabel: {
+    text: 'UKHSA',
+    href: '#'
+  },
+  serviceLabel: {
+    text: 'EPHID',
+    href: '#'
+  },
+  navigation: {
+    label: 'Account navigation',
+    items: [{
+      text: 'Account name',
+      href: '#',
+      active: true
+    }, {
+      text: 'Sign out',
+      href: '#'
+    }]
+  }
+
+}) }}
+
+
+{{ mojPrimaryNavigation({
+  label: 'Primary navigation',
+  items: [
+    {
+      text: 'Home',
+      href: '#1',
+      active: true
+    },
+    {
+      text: 'Incident',
+      href: '#2'
+    },
+    {
+      text: 'Enquiry',
+      href: '#3'
+    },
+    {
+      text: 'Consultation',
+      href: '#4'
+    },
+    {
+      text: 'Search',
+      href: '#5'
+    }
+  ]
+}) }}
+{% endblock %}

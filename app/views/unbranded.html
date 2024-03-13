@@ -1,0 +1,67 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "UKHSA",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#1",
+      text: "Navigation item 1",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Navigation item 2"
+   
+    },
+    {
+      href: "#3",
+      text: "Navigation item 3"
+    
+    },
+    {
+      href: "#4",
+      text: "Navigation item 4"
+      
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+    Unbranded page template
+  </h1>
+  <p class="govuk-body-l">
+    This page doesn't use New Transport or display the GOV.UK header and footer.
+  </p>
+
+{% endblock %}
+
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "/privacy",
+         text: "Privacy policy"
+       },
+       {
+         href: "/manage-prototype",
+         text: "Manage your prototype"
+       },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}

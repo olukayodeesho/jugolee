@@ -1,0 +1,141 @@
+{% extends "/layouts/default.html" %}
+
+{% block content %}
+
+{% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    {{ govukTaskList({
+      idPrefix: "company-details",
+      items: [
+        {
+          title: {
+            text: "Basic Information"
+          },
+          href: "basic-info/index",
+          status: {
+            text: "Completed"
+          }
+        },
+        {
+          title: {
+            text: "Incident details"
+          },
+          href: "#",
+          status: {
+            tag: {
+              text: "Incomplete",
+              classes: "govuk-tag--blue"
+            }
+          }
+        },
+        {
+          title: {
+            text: "Incident location"
+          },
+          href: "#",
+          status: {
+            tag: {
+              text: "Incomplete",
+              classes: "govuk-tag--blue"
+            }
+          }
+        },
+        {
+          title: {
+            text: "Incident agents"
+          },
+          href: "#",
+          status: {
+            tag: {
+              text: "Incomplete",
+              classes: "govuk-tag--blue"
+            }
+          }
+        },
+        {
+          title: {
+            text: "Incident exposure/case"
+          },
+          href: "#",
+          status: {
+            tag: {
+              text: "Incomplete",
+              classes: "govuk-tag--blue"
+            }
+          }
+        },
+        {
+          title: {
+            text: "Incident actions"
+          },
+          href: "#",
+          status: {
+            tag: {
+              text: "Incomplete",
+              classes: "govuk-tag--blue"
+            }
+          }
+        },
+        {
+          title: {
+            text: "Logs"
+          },
+          hint: {
+            text: "Includes information received/gathered as well as actions/decision that was taken"
+          },
+          href: "#",
+          status: {
+            tag: {
+              text: "Incomplete",
+              classes: "govuk-tag--blue"
+            }
+          }
+        },
+        {
+          title: {
+            text: "Lessons from Incident"
+          },
+          href: "#",
+          status: {
+            tag: {
+              text: "Incomplete",
+              classes: "govuk-tag--blue"
+            }
+          }
+        },
+        {
+          title: {
+            text: "Audit"
+          },
+          href: "#",
+          status: {
+            tag: {
+              text: "Incomplete",
+              classes: "govuk-tag--blue"
+            }
+          }
+        },
+        {
+          title: {
+            text: "Incident related documents"
+          },
+          href: "#",
+          status: {
+            tag: {
+              text: "Incomplete",
+              classes: "govuk-tag--blue"
+            }
+          }
+        }
+      ]
+    }) }}
+  </div>
+</div>
+
+
+
+
+{% endblock %}
+

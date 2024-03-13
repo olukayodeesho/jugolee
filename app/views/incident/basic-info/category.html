@@ -1,0 +1,72 @@
+{% extends "layouts/default.html" %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{% block pageTitle %}
+  Create a new incident - name
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="crce-team" method="post">
+     
+        {{ govukCheckboxes({
+          name: "category",
+          fieldset: {
+            legend: {
+              text: "What is the category of the incident?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "acute",
+              text: "Acute"
+            },
+            {
+              value: "chronic",
+              text: "Chronic"
+            }
+          ]
+        }) }}
+      
+
+        {{ govukButton({
+          text: "Save and Continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+        
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}

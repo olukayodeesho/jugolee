@@ -1,0 +1,359 @@
+{% extends "layouts/default.html" %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{% block pageTitle %}
+  Create a new incident - name
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="org-contact" method="post">
+     
+        <div class="govuk-form-group">
+          <label class="govuk-label--l" for="location">
+            Select Organization's contact
+          </label>
+          <div id="location-hint" class="govuk-hint">
+            This can be different to where you went before
+          </div>
+          <select class="govuk-select" id="org-contact-select" name="location" aria-describedby="location-hint">
+            <option value="0">--Select--</option>
+            <option value="3">Anglia Health Protection Team (Anglia and Essex PHEC)</option>
+            <option value="4">Avon Fire &amp; Rescue Service</option>
+            <option value="6">Bedfordshire &amp; Luton Fire and Rescue Service</option>
+            <option value="7">Birmingham National Poisons Information Centre</option>
+            <option value="8">British Transport Police</option>
+            <option value="9">Buckinghamshire Fire &amp; Rescue Service</option>
+            <option value="10">Cabinet Office</option>
+            <option value="11">Cambridgeshire Fire &amp; Rescue Service</option>
+            <option value="12">Cardiff National Poisons Information Centre</option>
+            <option value="13">Charity</option>
+            <option value="14">Cheshire &amp; Merseyside PHE Centre</option>
+            <option value="15">Cheshire Fire &amp; Rescue Service</option>
+            <option value="16">Civil Nuclear Constabulary</option>
+            <option value="17">Cleveland Fire &amp; Rescue</option>
+            <option value="18">Colindale (prev Centre for Infections)</option>
+            <option value="19">Cornwall County Fire &amp; Rescue Service</option>
+            <option value="20">Cornwall Health Protection Team (Devon, Cornwall and Somerset PHEC)</option>
+            <option value="21">CRCE (not EHE)</option>
+            <option value="22">Cumbria and Lancashire PHE Centre</option>
+            <option value="23">Cumbria Fire &amp; Rescue Service</option>
+            <option value="163">Defence Science and Technology Laboratory</option>
+            <option value="24">Department for Communities and Local Government</option>
+            <option value="25">Department for Energy &amp; Climate Change</option>
+            <option value="26">Department for Transport</option>
+            <option value="27">Department of Environment, Food and Rural Affairs</option>
+            <option value="28">Department of Health</option>
+            <option value="29">Derbyshire Fire &amp; Rescue Service</option>
+            <option value="30">Devon and Somerset Fire &amp; Rescue Service</option>
+            <option value="32">Dorset Fire &amp; Rescue Service</option>
+            <option value="34">Drinking Water Inspectorate</option>
+            <option value="35">Durham &amp; Darlington Fire &amp; Rescue Authority</option>
+            <option value="202">Dyfed Police</option>
+            <option value="36">East Midlands Ambulance Service</option>
+            <option value="1197">East Midlands Health Protection Team</option>
+            <option value="39">East of England Ambulance Service</option>
+            <option value="40">East Sussex Fire &amp; Rescue Service</option>
+            <option value="41">Edinburgh National Poisons Information Centre</option>
+            <option value="42">Emergency Response Department</option>
+            <option value="43">Environment Agency</option>
+            <option value="44">Essex County Fire &amp; Rescue Service</option>
+            <option value="45">Essex Health Protection Team (Anglia and Essex PHEC)</option>
+            <option value="46">Food Standards Agency</option>
+            <option value="197">Food Standards Agency Wales</option>
+            <option value="47">Foreign and Commonwealth Office</option>
+            <option value="48">General Practitioner</option>
+            <option value="49">Gibraltar City Fire &amp; Rescue Service</option>
+            <option value="50">Gloucestershire Fire &amp; Rescue Service</option>
+            <option value="51">Greater Manchester Fire &amp; Rescue Service</option>
+            <option value="52">Greater Manchester Health Protection Team (Greater Manchester PHEC)</option>
+            <option value="53">Greater Manchester PHE Centre</option>
+            <option value="201">Gwent Police</option>
+            <option value="152">Hampshire and Isle of Wight PHE Centre </option>
+            <option value="54">Hampshire Fire &amp; Rescue Service</option>
+            <option value="55">Health and Safety Executive</option>
+            <option value="56">Health and Safety Laboratory</option>
+            <option value="57">Health Protection Scotland</option>
+            <option value="58">Health Service Executive, Republic of Ireland</option>
+            <option value="59">Hereford &amp; Worcester Fire &amp; Rescue Service</option>
+            <option value="60">Hertfordshire Fire &amp; Rescue Service</option>
+            <option value="61">Home Office</option>
+            <option value="62">Hospital</option>
+            <option value="63">Humberside Fire &amp; Rescue</option>
+            <option value="64">Industry / commercial organisation</option>
+            <option value="65">Isle of Man Fire &amp; Rescue Service</option>
+            <option value="66">Isle of Scilly Fire &amp; Rescue Service</option>
+            <option value="67">Isle of Wight Fire &amp; Rescue Service</option>
+            <option value="68">Jersey Fire and Rescue Service</option>
+            <option value="69">Kent Fire &amp; Rescue Service</option>
+            <option value="70">Kent Health Protection Team (Kent, Surrey and Sussex PHEC)</option>
+            <option value="1203">Laboratory</option>
+            <option value="71">Lancashire Fire &amp; Rescue Service</option>
+            <option value="72">Leicestershire Fire &amp; Rescue Service</option>
+            <option value="73">Lincolnshire Fire &amp; Rescue</option>
+            <option value="74">Local authority</option>
+            <option value="75">London Ambulance Service</option>
+            <option value="76">London Fire Brigade</option>
+            <option value="77">Maritime &amp; Coastguard Agency</option>
+            <option value="198">Maritime &amp; Coastguard Agency Wales</option>
+            <option value="78">Media</option>
+            <option value="79">Member of the public</option>
+            <option value="80">Merseyside Fire &amp; Rescue Service</option>
+            <option value="81">Met Office - EMARC</option>
+            <option value="82">Mid &amp; West Wales Fire Brigade </option>
+            <option value="83">Midlands and East of England Regional Office</option>
+            <option value="84">Ministry of Defence</option>
+            <option value="85">National Chemical Emergency Centre</option>
+            <option value="127">National Crime Agency</option>
+            <option value="86">National Police CBRN Centre</option>
+            <option value="1201">National Public Health Service for Wales</option>
+            <option value="87">National Teratology Information Service</option>
+            <option value="88">Natural Resources Wales</option>
+            <option value="89">Newcastle National Poisons Information Centre</option>
+            <option value="1196">NHS Direct / 111</option>
+            <option value="90">NHS England</option>
+            <option value="95">Norfolk Fire and Rescue Service</option>
+            <option value="96">North East Ambulance Service</option>
+            <option value="97">North East and North Central London Health Protection Team (London PHEC)</option>
+            <option value="98">North East Health Protection Team (North East PHEC)</option>
+            <option value="99">North Wales Fire Service</option>
+            <option value="203">North Wales Police</option>
+            <option value="100">North West London Health Protection Team (London PHEC)</option>
+            <option value="101">North Yorkshire and Humber Health Protection Team  (Yorkshire and the Humber PHEC)</option>
+            <option value="102">North Yorkshire Fire &amp; Rescue Service</option>
+            <option value="103">Northamptonshire Fire &amp; Rescue Service</option>
+            <option value="104">Northern Ireland Ambulance Service</option>
+            <option value="91">Northern Ireland East Fire and Rescue Service</option>
+            <option value="105">Northern Ireland Fire and Rescue Service</option>
+            <option value="92">Northern Ireland North Fire and Rescue Service</option>
+            <option value="106">Northern Ireland Regional Medicines &amp; Poisons Information Centre </option>
+            <option value="93">Northern Ireland South Fire and Rescue Service</option>
+            <option value="94">Northern Ireland West Fire and Rescue Service</option>
+            <option value="107">Northumberland Fire &amp; Rescue Service</option>
+            <option value="108">Nottinghamshire Fire &amp; Rescue Service</option>
+            <option value="109">Nuclear Site</option>
+            <option value="110">Office for Nuclear Regulation</option>
+            <option value="111">Other</option>
+            <option value="112">Oxfordshire Fire &amp; Rescue Service</option>
+            <option value="113">PHE London Regional Office</option>
+            <option value="114">PHE North Regional Office</option>
+            <option value="115">PHE South Regional Office</option>
+            <option value="195">Police</option>
+            <option value="116">Police Scotland</option>
+            <option value="117">Pressure group</option>
+            <option value="118">Public Health Wales</option>
+            <option value="1200">Public Health Wales HQ &amp;  HPT S.E Wales Cardiff</option>
+            <option value="204">Public Health Wales Office Caerphilly</option>
+            <option value="205">Public Health Wales Office Cardiff</option>
+            <option value="206">Public Health Wales Office Carmarthen</option>
+            <option value="207">Public Health Wales Office Mamhilad</option>
+            <option value="208">Public Health Wales Office North Wales </option>
+            <option value="209">Public Health Wales Office Swansea</option>
+            <option value="1199">Republic of Ireland HSE</option>
+            <option value="119">Royal Berkshire Fire &amp; Rescue Service</option>
+            <option value="120">School</option>
+            <option value="121">Scotland East Fire and Rescue Service</option>
+            <option value="122">Scotland North Fire and Rescue Service</option>
+            <option value="123">Scotland West Fire and Rescue Service</option>
+            <option value="124">Scottish Ambulance Service</option>
+            <option value="125">Scottish Environment Protection Agency</option>
+            <option value="126">Scottish Fire and Rescue Service</option>
+            <option value="128">Shropshire Fire &amp; Rescue Service</option>
+            <option value="129">South Central Ambulance Service</option>
+            <option value="130">South East Coastal Ambulance Service</option>
+            <option value="131">South East London Health Protection Team (London PHEC)</option>
+            <option value="132">South Midlands and Hertfordshire PHE Centre</option>
+            <option value="133">South Wales Fire Service </option>
+            <option value="200">South Wales Police </option>
+            <option value="134">South West Ambulance service </option>
+            <option value="135">South West London Health Protection Team (London PHEC)</option>
+            <option value="5">South West North PHE Centre</option>
+            <option value="31">South West South PHE Centre</option>
+            <option value="136">South Yorkshire Fire &amp; Rescue Service</option>
+            <option value="137">South Yorkshire Health Protection Team  (Yorkshire and the Humber PHEC)</option>
+            <option value="138">Staffordshire Fire &amp; Rescue Service</option>
+            <option value="139">States of Guernsey Fire and Rescue Service</option>
+            <option value="140">Suffolk Fire and Rescue Service</option>
+            <option value="141">Surrey &amp; Sussex Health Protection Team (Kent, Surrey and Sussex PHEC)</option>
+            <option value="142">Surrey Fire &amp; Rescue Service</option>
+            <option value="1198">Thames Valley FRS Control room</option>
+            <option value="143">Thames Valley PHE Centre</option>
+            <option value="144">The Planning Inspectorate - National Infrastructure Projects</option>
+            <option value="145">Tyne &amp; Wear Metropolitan Fire &amp; Rescue Service</option>
+            <option value="146">University</option>
+            <option value="1202">Wales duty desk</option>
+            <option value="147">Walk-in Centre</option>
+            <option value="148">Warwickshire Fire &amp; Rescue</option>
+            <option value="149">Water, gas, electric company</option>
+            <option value="199">Welsh Ambulance Service NHS Trust Central &amp; West Wales</option>
+            <option value="150">Welsh Ambulance Service NHS Trust North Wales</option>
+            <option value="151">Welsh Ambulance Service NHS Trust South East Wales</option>
+            <option value="196">Welsh Government </option>
+            <option value="33">Wessex Health Protection Team (Wessex PHEC)</option>
+            <option value="153">West Midlands Ambulance Service</option>
+            <option value="164">West Midlands East Health Protection Team</option>
+            <option value="154">West Midlands Fire Service</option>
+            <option value="155">West Midlands North Health Protection Team (West Midlands PHEC)</option>
+            <option value="156">West Midlands PHE Centre</option>
+            <option value="157">West Midlands West Health Protection Team (West Midlands PHEC)</option>
+            <option value="158">West Sussex Fire &amp; Rescue Service</option>
+            <option value="159">West Yorkshire Fire Service</option>
+            <option value="160">West Yorkshire Health Protection Team (Yorkshire and the Humber PHEC)</option>
+            <option value="161">Wiltshire Fire and Rescue Service</option>
+            <option value="162">Yorkshire Ambulance Service</option>
+          </select>
+        </div>
+
+        
+      
+
+
+        <div class="govuk-summary-card" style="display: none" id ="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Lead tenant
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Organization Type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Fire Service
+                </dd>
+               
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Headquarters, PEverell Avenue West, Poundbury
+                </dd>
+                
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Town
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Dorchester
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  County
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Dorset
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Post Code
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  DT1 3SU
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Telephone
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  01305 252040
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Fax
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Email
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  control@dorsefire.gov.uk
+                </dd>
+              </div>
+
+            </dl>
+          </div>
+        </div>
+      </form>
+
+      {{ govukButton({
+        text: "Save and Continue"
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+        
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block pageScripts %}
+  <script type="text/javascript">
+   console.log(" in scripts section ....."); 
+        // Get references to the dropdown and the div to hide
+    const dropdown = document.getElementById('org-contact-select');
+    const divToHide = document.getElementById('govuk-summary-card');
+
+    // Add event listener to the dropdown
+    dropdown.addEventListener('change', function() {
+      // Check the selected value of the dropdown
+      const selectedValue = dropdown.value;
+      console.log(" selected value ....." +  selectedValue); 
+      console.log(" selected text ....." +  dropdown.text); 
+
+      // If the selected value matches a specific option, hide the div
+      if (selectedValue === '0') {
+        console.log(" selected value ....." +  selectedValue); 
+        divToHide.style.display = 'none';
+        document.querySelector('.govuk-summary-card__title').textContent = "";
+      } else {
+        // Otherwise, show the div
+        divToHide.style.display = 'block';
+        document.querySelector('.govuk-summary-card__title').textContent = $("#org-contact-select option:selected").text();
+      }
+    });
+
+  </script>
+{% endblock %}

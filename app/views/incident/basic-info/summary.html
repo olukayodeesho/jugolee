@@ -1,0 +1,240 @@
+{% extends "layouts/default.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl">
+       Check your inputs
+      </h1>
+      <form action="/incident/index" method="post" novalidate>
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+          {{ govukSummaryList({
+            card: {
+              title: {
+                text: "New Incident : Basic Information"
+              }
+            },
+            rows: [
+              {
+                key: {
+                  text: "Title"
+                },
+                value: {
+                  html: "Waste Tyre Fire, Bradford"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "whether details are known"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Initial Contact Date"
+                },
+                value: {
+                  html: "29th May 2024"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "relationship to lead tenant"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Initial Contact Time(24 hr)"
+                },
+                value: {
+                  html: "14:30"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "age"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Incident Category"
+                },
+                value: {
+                  html: "Acute"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "working situation"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "CRCE Team"
+                },
+                value: {
+                  html: "General Toxicology"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "working situation"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Organization Type"
+                },
+                value: {
+                  html: "Fire Service"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "working situation"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Town"
+                },
+                value: {
+                  html: "Dorchester"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "working situation"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "County"
+                },
+                value: {
+                  html: "County"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "working situation"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Post Code"
+                },
+                value: {
+                  html: "DT1 3SU"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "working situation"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Telephone"
+                },
+                value: {
+                  html: "01305 252040"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "working situation"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Email"
+                },
+                value: {
+                  html: "control@dorsefire.gov.uk"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "working situation"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+      <h2 class="govuk-heading-m">
+        Now send your application
+      </h2>
+
+      <p>
+        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+   
+
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
+
+      </form>
+
+    </div>
+
+    
+  </div>
+{% endblock %}
